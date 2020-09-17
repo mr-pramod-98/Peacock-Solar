@@ -1,6 +1,29 @@
 <resources>
     <string name="app_name">Peacock Solar</string>
+
+    <!-- SPLASH SCREEN -->
     <string name="peacock">P E A C O C K</string>
     <string name="solar">S O L A R</string>
     <string name="sub_title">GREEN | CLEAN | SMART</string>
+
+
+    <string name="name">NAME</string>
+    <string name="email">EMAIL</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="password">PASSWORD</string>
+    <string name="username_example">username</string>
+    <string name="email_example">example@domail.com</string>
+    <string name="phone_number_example">enter phone number</string>
+    <string name="password_example">enter password</string>
+
+    <!-- SIGN-IN PAGE -->
+    <string name="sign_in">Sign In</string>
+    <string name="dose_not_have_an_account">dose not have an account?</string>
+    <string name="sign_up_option">SignUp</string>
+
+    <!-- SIGN-UP PAGE -->
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">already have an account?</string>
+    <string name="sign_in_option">SignIn</string>
+
 </resources>
