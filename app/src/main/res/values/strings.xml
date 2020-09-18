@@ -25,7 +25,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account">already have an account?</string>
     <string name="sign_in_option">SignIn</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TOOLBAR -->
+    <string name="peacock_solar">Peacock Solar</string>
+    <string name="profile">Profile</string>
 
 </resources>
