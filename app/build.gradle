@@ -34,4 +34,7 @@ dependencies {
 
     // DESIGN
     implementation 'com.google.android.material:material:1.2.1'
+
+    // CIRCLE IMAGE VIEW
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

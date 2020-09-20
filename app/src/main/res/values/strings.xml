@@ -1,12 +1,6 @@
 <resources>
     <string name="app_name">Peacock Solar</string>
 
-    <!-- SPLASH SCREEN -->
-    <string name="peacock">P E A C O C K</string>
-    <string name="solar">S O L A R</string>
-    <string name="sub_title">GREEN | CLEAN | SMART</string>
-
-
     <string name="name">NAME</string>
     <string name="email">EMAIL</string>
     <string name="phone_number">PHONE NUMBER</string>
@@ -15,6 +9,15 @@
     <string name="email_example">example@domail.com</string>
     <string name="phone_number_example">enter phone number</string>
     <string name="password_example">enter password</string>
+
+    <!-- TOOLBAR -->
+    <string name="peacock_solar">Peacock Solar</string>
+    <string name="profile">Profile</string>
+
+    <!-- SPLASH SCREEN -->
+    <string name="peacock">P E A C O C K</string>
+    <string name="solar">S O L A R</string>
+    <string name="sub_title">GREEN | CLEAN | SMART</string>
 
     <!-- SIGN-IN PAGE -->
     <string name="sign_in">Sign In</string>
@@ -26,8 +29,17 @@
     <string name="already_have_an_account">already have an account?</string>
     <string name="sign_in_option">SignIn</string>
 
-    <!-- TOOLBAR -->
-    <string name="peacock_solar">Peacock Solar</string>
-    <string name="profile">Profile</string>
+    <!-- PROFILE PAGE -->
+    <string name="profile_hello">Hello</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_phone_number">Phone Number</string>
+    <string name="profile_gender">Gender</string>
+    <string name="profile_user_dob">Date of Birth</string>
+    <string name="profile_username">Sherlock Holmes</string>
+    <string name="profile_email_value">sherlock.holmes.0092@gmail.com</string>
+    <string name="profile_phone_number_value">9343280082</string>
+    <string name="profile_gender_value">Male</string>
+    <string name="profile_user_dob_value">14/10/1892</string>
+    <string name="edit_profile">EDIT PROFILE</string>
 
 </resources>
