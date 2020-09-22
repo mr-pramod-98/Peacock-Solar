@@ -31,6 +31,7 @@
 
     <!-- PROFILE PAGE -->
     <string name="profile_hello">Hello</string>
+    <string name="profile_name">Name</string>
     <string name="profile_email">Email</string>
     <string name="profile_phone_number">Phone Number</string>
     <string name="profile_gender">Gender</string>
@@ -41,5 +42,12 @@
     <string name="profile_gender_value">Male</string>
     <string name="profile_user_dob_value">14/10/1892</string>
     <string name="edit_profile">EDIT PROFILE</string>
+    <string name="profile_save">SAVE</string>
+
+    <!-- PROFILE PAGE SPINNER "GENDER" -->
+    <string-array name="profile_spinner_gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 
 </resources>
