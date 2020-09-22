@@ -11,6 +11,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        android:theme="@style/ToolbarTheme"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/toolbar_background"
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="@string/profile_username"
             android:drawableEnd="@drawable/authentication_username"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_light"
             android:inputType="text"
             android:textColor="@color/blue"
             android:textSize="18sp" />
@@ -72,7 +73,7 @@
             android:layout_height="wrap_content"
             android:text="@string/profile_email_value"
             android:drawableEnd="@drawable/authentication_email"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_light"
             android:inputType="textEmailAddress"
             android:textColor="@color/blue"
             android:textSize="18sp" />
@@ -93,10 +94,30 @@
             android:layout_height="wrap_content"
             android:text="@string/profile_phone_number_value"
             android:drawableEnd="@drawable/authentication_phone_number"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_light"
             android:inputType="phone"
             android:textColor="@color/blue"
             android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Date of Birth"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/date_of_birth_edit_text_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableEndCompat="@drawable/profile_calendar"
+            android:text="14/10/1892"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/blue"
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -119,7 +140,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/profile_button_background"
             android:text="@string/profile_save"
