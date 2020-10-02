@@ -29,7 +29,7 @@
             android:layout_height="0.6dp"
             android:layout_gravity="bottom"
             android:layout_marginBottom="50dp"
-            android:background="@android:color/black" />
+            android:background="@color/soft_grey" />
 
         <LinearLayout
             android:id="@+id/nav_sign_out"
