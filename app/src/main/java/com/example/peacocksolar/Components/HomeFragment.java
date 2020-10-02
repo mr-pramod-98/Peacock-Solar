@@ -1,5 +1,6 @@
 package com.example.peacocksolar.Components;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,12 @@ public class HomeFragment extends Fragment {
     // WIDGETS
     FloatingActionButton addLeadButton;
 
+    private Listener listenerAddLead;
+
+    public interface Listener {
+        void onClickLoadAddLeadFragment();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -34,8 +41,20 @@ public class HomeFragment extends Fragment {
         addLeadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
+                listenerAddLead.onClickLoadAddLeadFragment();
             }
         });
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        listenerAddLead = (Listener) context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listenerAddLead = null;
     }
 }
