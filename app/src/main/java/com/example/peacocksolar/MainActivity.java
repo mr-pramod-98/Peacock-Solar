@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.peacocksolar.Components.AddLeadActivity;
 import com.example.peacocksolar.Components.HomeFragment;
 import com.example.peacocksolar.Components.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         Fragment fragment = new HomeFragment();
+        Intent intent = null;
 
         switch (menuItem.getItemId()){
 
@@ -42,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_add_lead:
-                break;
+                intent = new Intent(MainActivity.this, AddLeadActivity.class);
+                startActivity(intent);
+                return true;
 
             case R.id.nav_check_proposal:
                 break;

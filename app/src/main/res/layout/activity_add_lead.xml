@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Components.AddLeadActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ToolbarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/toolbar_background"
+        android:elevation="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="2dp"
+        app:title="Enter Lead Details"
+        app:titleTextColor="@color/white"
+        android:padding="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/edit_profile_background"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/name_edit_text_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="Full Name"
+            android:textColorHint="@color/soft_grey"
+            android:drawableEnd="@drawable/authentication_username"
+            android:fontFamily="@font/poppins_light"
+            android:inputType="text"
+            android:textColor="@color/blue"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/phone_edit_text_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="Phone Number"
+            android:textColorHint="@color/soft_grey"
+            android:drawableEnd="@drawable/authentication_phone_number"
+            android:fontFamily="@font/poppins_light"
+            android:inputType="phone"
+            android:textColor="@color/blue"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/email_edit_text_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="Email ID"
+            android:textColorHint="@color/soft_grey"
+            android:drawableEnd="@drawable/authentication_email"
+            android:fontFamily="@font/poppins_light"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/blue"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/date_of_birth_edit_text_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:drawableEndCompat="@drawable/icon_source"
+            android:textColorHint="@color/soft_grey"
+            android:hint="Source"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/blue"
+            android:textSize="18sp"/>
+
+
+        <EditText
+            android:id="@+id/date_of_birth_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:drawableEndCompat="@drawable/icon_address"
+            android:textColorHint="@color/soft_grey"
+            android:hint="Complete Address"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/blue"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/profile_button_background"
+            android:text="Add Lead"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:elevation="5dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
