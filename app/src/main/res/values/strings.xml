@@ -15,6 +15,7 @@
     <string name="profile">Profile</string>
 
     <!-- NAVIGATION DRAWER -->
+    <string name="my_incentive">$ 203.18</string>
     <string name="navigation_drawer_open"> Open navigation drawer </string>
     <string name="navigation_drawer_close"> Close navigation drawer </string>
 
@@ -58,6 +59,15 @@
     <string name="profile_user_dob_value">14/10/1892</string>
     <string name="edit_profile">EDIT PROFILE</string>
     <string name="profile_save">SAVE</string>
+
+    <!-- ADD LEAD PAGE -->
+    <string name="add_lead_details">Enter Lead Details</string>
+    <string name="add_lead_name_hint">Full Name</string>
+    <string name="add_lead_phone_number_hint">Phone Number</string>
+    <string name="add_lead_email_hint">Email ID</string>
+    <string name="add_lead_source_hint">Source</string>
+    <string name="add_lead_address_hint">Complete Address</string>
+    <string name="add_lead_button">Add Lead</string>
 
     <!-- PROFILE PAGE SPINNER "GENDER" -->
     <string-array name="profile_spinner_gender">

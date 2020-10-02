@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -19,7 +20,7 @@ import com.example.peacocksolar.Components.HomeFragment;
 import com.example.peacocksolar.Components.ProfileFragment;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     // WIDGETS
     private Toolbar toolbar;
@@ -28,7 +29,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private LinearLayout signOut;
 
     // VAR
+    private HomeFragment homeFragmentAdapter;
     private ActionBarDrawerToggle actionBarDrawerToggleRequest;
+    private static Menu menu;
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -77,10 +80,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        homeFragmentAdapter = new HomeFragment();
         navigationView = findViewById(R.id.navigation_view);
         drawerLayout = findViewById(R.id.drawer_layout);
         signOut = findViewById(R.id.nav_sign_out);
         toolbar = findViewById(R.id.toolbar);
+
+        // GET THE MENU
+        menu = navigationView.getMenu();
 
 
         /* ========================= TOOLBAR SETUP -> START ===========================*/
@@ -123,5 +130,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .beginTransaction()
                 .add(R.id.fragment_container, new HomeFragment())
                 .commit();
+
+        // MAKE MENU-ITEM "nav_donate" AS CHECKED SINCE "DONATE FRAGMENT" IS THE DEFAULT FRAGMENT
+        menu.findItem(R.id.nav_my_leads).setChecked(true);
     }
 }
