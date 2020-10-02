@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_my_leads"
+            android:icon="@drawable/nav_my_leads"
+            android:title="@string/nav_my_leads"/>
+
+        <item
+            android:id="@+id/nav_add_lead"
+            android:icon="@drawable/nav_add_lead"
+            android:title="@string/nav_add_lead"/>
+
+        <item
+            android:id="@+id/nav_check_proposal"
+            android:icon="@drawable/nav_check_proposal"
+            android:title="@string/nav_check_proposal"/>
+
+        <item
+            android:id="@+id/nav_check_incentive"
+            android:icon="@drawable/nav_check_incentive"
+            android:title="@string/nav_check_incentive"/>
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/nav_profile"
+            android:title="@string/nav_profile"/>
+
+        <item
+            android:id="@+id/nav_raise_query"
+            android:icon="@drawable/nav_raise_query"
+            android:title="@string/nav_raise_query"/>
+        <item
+            android:id="@+id/nav_learn_more"
+            android:icon="@drawable/nav_learn_more"
+            android:title="@string/nav_learn_more"/>
+
+    </group>
+</menu>

@@ -14,6 +14,21 @@
     <string name="peacock_solar">Peacock Solar</string>
     <string name="profile">Profile</string>
 
+    <!-- NAVIGATION DRAWER -->
+    <string name="navigation_drawer_open"> Open navigation drawer </string>
+    <string name="navigation_drawer_close"> Close navigation drawer </string>
+
+    <!-- MENU ITEMS -->
+    <string name="nav_my_leads">My Leads</string>
+    <string name="nav_add_lead">Add Lead</string>
+    <string name="nav_check_proposal">Check Proposal</string>
+    <string name="nav_check_incentive">Check Incentive</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_raise_query">Raise Query</string>
+    <string name="nav_learn_more">Learn More</string>
+    <string name="nav_sign_out">Sign Out</string>
+
+
     <!-- SPLASH SCREEN -->
     <string name="peacock">P E A C O C K</string>
     <string name="solar">S O L A R</string>
