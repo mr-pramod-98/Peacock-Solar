@@ -20,7 +20,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:src="@drawable/float_button_add_lead"
         app:backgroundTint="@color/black"
         app:elevation="15dp"

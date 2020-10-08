@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,18 @@ import com.example.peacocksolar.R;
 
 
 public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerViewMyLeadsAdapter.ViewHolder> {
+
+    private Listener listener;
+
+    public interface Listener {
+        void onCreateProposalClick();
+        void onMessageClick(String phoneNumber);
+        void onContactClicked(String phoneNumber);
+    }
+
+    public void setMyLeadActionsListener(Listener listener) {
+        this.listener = listener;
+    }
 
 
     public RecyclerViewMyLeadsAdapter() { }
@@ -27,7 +40,33 @@ public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        //TODO: HANDLE THE ACTION HERE
+
+        holder.call_lead_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(listener != null){
+                    listener.onContactClicked("9343280082");
+                }
+            }
+        });
+
+        holder.message_lead_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(listener != null){
+                    listener.onMessageClick("9343280082");
+                }
+            }
+        });
+
+        holder.create_proposal_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(listener != null){
+                    listener.onCreateProposalClick();
+                }
+            }
+        });
     }
 
     @Override
