@@ -6,12 +6,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.peacocksolar.Components.Home.RecyclerViewLeadsAdapter;
 import com.example.peacocksolar.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -19,6 +22,10 @@ public class HomeFragment extends Fragment {
 
     // WIDGETS
     FloatingActionButton addLeadButton;
+    private RecyclerView recyclerView;
+
+    // VAR
+    private RecyclerViewLeadsAdapter adapter;
 
     private Listener listenerAddLead;
 
@@ -37,6 +44,15 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         addLeadButton = view.findViewById(R.id.add_lead_button);
+        recyclerView = view.findViewById(R.id.recycler_view_my_leads);
+        adapter = new RecyclerViewLeadsAdapter();
+
+        // SET ADAPTER FOR THE RECYCLER-VIEW
+        recyclerView.setAdapter(adapter);
+        // SET LAYOUT-MANAGER FOR THE RECYCLER-VIEW
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        recyclerView.hasFixedSize();
 
         addLeadButton.setOnClickListener(new View.OnClickListener() {
             @Override

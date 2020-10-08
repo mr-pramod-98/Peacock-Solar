@@ -48,7 +48,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_light"
-                        android:text="@string/name"
+                        android:text="@string/name_caps"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -67,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/poppins_light"
-                        android:text="@string/email"
+                        android:text="@string/email_caps"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -87,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/poppins_light"
-                        android:text="@string/phone_number"
+                        android:text="@string/phone_number_caps"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -107,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/poppins_light"
-                        android:text="@string/password"
+                        android:text="@string/password_caps"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Peacock Solar</string>
 
-    <string name="name">NAME</string>
-    <string name="email">EMAIL</string>
-    <string name="phone_number">PHONE NUMBER</string>
-    <string name="password">PASSWORD</string>
+    <string name="name_caps">NAME</string>
+    <string name="email_caps">EMAIL</string>
+    <string name="phone_number_caps">PHONE NUMBER</string>
+    <string name="password_caps">PASSWORD</string>
     <string name="username_example">username</string>
     <string name="email_example">example@domail.com</string>
     <string name="phone_number_example">enter phone number</string>
@@ -68,6 +68,15 @@
     <string name="add_lead_source_hint">Source</string>
     <string name="add_lead_address_hint">Complete Address</string>
     <string name="add_lead_button">Add Lead</string>
+
+    <!-- MY LEADS PAGE -->
+    <string name="name"> Name : </string>
+    <string name="address"> Address : </string>
+    <string name="lead_name"> Lead Name </string>
+    <string name="lead_location_details"> Lead Location Details lead_location_details lead_location_details lead_location_details lead_location_details </string>
+    <string name="contact"> CONTACT </string>
+    <string name="message"> MESSAGE </string>
+    <string name="create_proposal"> CREATE PROPOSAL </string>
 
     <!-- PROFILE PAGE SPINNER "GENDER" -->
     <string-array name="profile_spinner_gender">
