@@ -1,4 +1,4 @@
-package com.example.peacocksolar.Components;
+package com.example.peacocksolar.Components.AddLead;
 
 import android.os.Bundle;
 

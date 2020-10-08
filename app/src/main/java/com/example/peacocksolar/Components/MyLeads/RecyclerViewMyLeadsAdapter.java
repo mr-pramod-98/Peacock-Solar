@@ -1,4 +1,4 @@
-package com.example.peacocksolar.Components.Home;
+package com.example.peacocksolar.Components.MyLeads;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.peacocksolar.R;
 
 
-public class RecyclerViewLeadsAdapter extends RecyclerView.Adapter<RecyclerViewLeadsAdapter.ViewHolder> {
+public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerViewMyLeadsAdapter.ViewHolder> {
 
 
-    public RecyclerViewLeadsAdapter() {
+    public RecyclerViewMyLeadsAdapter() {
     }
 
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_leads_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_my_leads_item, parent, false);
         return new ViewHolder(view);
     }
 

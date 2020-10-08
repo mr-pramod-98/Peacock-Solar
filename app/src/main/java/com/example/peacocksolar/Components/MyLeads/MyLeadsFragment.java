@@ -1,4 +1,4 @@
-package com.example.peacocksolar.Components;
+package com.example.peacocksolar.Components.MyLeads;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,20 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.example.peacocksolar.Components.Home.RecyclerViewLeadsAdapter;
+import com.example.peacocksolar.Components.MyLeads.RecyclerViewMyLeadsAdapter;
 import com.example.peacocksolar.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class HomeFragment extends Fragment {
+public class MyLeadsFragment extends Fragment {
 
     // WIDGETS
     FloatingActionButton addLeadButton;
     private RecyclerView recyclerView;
 
     // VAR
-    private RecyclerViewLeadsAdapter adapter;
+    private RecyclerViewMyLeadsAdapter adapter;
 
     private Listener listenerAddLead;
 
@@ -35,7 +34,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_my_leads, container, false);
         return view;
     }
 
@@ -45,7 +44,7 @@ public class HomeFragment extends Fragment {
 
         addLeadButton = view.findViewById(R.id.add_lead_button);
         recyclerView = view.findViewById(R.id.recycler_view_my_leads);
-        adapter = new RecyclerViewLeadsAdapter();
+        adapter = new RecyclerViewMyLeadsAdapter();
 
         // SET ADAPTER FOR THE RECYCLER-VIEW
         recyclerView.setAdapter(adapter);

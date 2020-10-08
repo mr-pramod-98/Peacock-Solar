@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".Components.Profile.EditProfileActivity" />
         <activity
             android:name=".Authentication.RegisterActivity"
             android:windowSoftInputMode="stateHidden" />

@@ -15,15 +15,16 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.peacocksolar.Components.AddLeadFragment;
-import com.example.peacocksolar.Components.HomeFragment;
-import com.example.peacocksolar.Components.ProfileFragment;
+import com.example.peacocksolar.Components.AddLead.AddLeadFragment;
+import com.example.peacocksolar.Components.MyLeads.MyLeadsFragment;
+import com.example.peacocksolar.Components.Profile.ProfileFragment;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.Listener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MyLeadsFragment.Listener {
 
     // WIDGETS
     private Toolbar toolbar;
+    private View navigationViewHeader;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private LinearLayout signOut;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        Fragment fragment = new HomeFragment();
+        Fragment fragment = new MyLeadsFragment();
 
         switch (menuItem.getItemId()){
 
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         navigationView = findViewById(R.id.navigation_view);
+        navigationViewHeader = navigationView.getHeaderView(0);
         drawerLayout = findViewById(R.id.drawer_layout);
         signOut = findViewById(R.id.nav_sign_out);
         toolbar = findViewById(R.id.toolbar);
@@ -112,6 +114,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         /* ========================= TOOLBAR REQUEST SETUP -> END ===========================*/
 
 
+        // HANDLING CLICK ON "NAVIGATION VIEW HEADER"
+        navigationViewHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // ON-CLICK LOAD "PROFILE FRAGMENT"
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new ProfileFragment())
+                        .commit();
+
+                // CLOSE THE DRAWER
+                drawerLayout.closeDrawers();
+            }
+        });
+
         // HANDLING CLICK ON "SETTINGS"
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_container, new HomeFragment())
+                .add(R.id.fragment_container, new MyLeadsFragment())
                 .commit();
 
         // MAKE MENU-ITEM "nav_my_leads" AS CHECKED SINCE "DONATE FRAGMENT" IS THE DEFAULT FRAGMENT

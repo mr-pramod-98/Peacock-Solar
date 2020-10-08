@@ -1,4 +1,4 @@
-package com.example.peacocksolar.Components;
+package com.example.peacocksolar.Components.Profile;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.peacocksolar.Authentication.LoginActivity;
-import com.example.peacocksolar.Authentication.RegisterActivity;
-import com.example.peacocksolar.ProfileActivity;
 import com.example.peacocksolar.R;
 
 public class ProfileFragment extends Fragment {
@@ -36,7 +33,7 @@ public class ProfileFragment extends Fragment {
         profileEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
                 startActivity(intent);
             }
         });
