@@ -12,6 +12,9 @@
     <color name="white">#FFFFFF</color>
     <color name="light_grey">#F8F7F7</color>
     <color name="blue">#2C87F0</color>
+    <color name="dark_blue">#103176</color>
+    <color name="orange">#EE6247</color>
+    <color name="red">#D80000</color>
 
     <!-- SignIn/SignUp page -->
     <color name="background">#2C87F0</color>

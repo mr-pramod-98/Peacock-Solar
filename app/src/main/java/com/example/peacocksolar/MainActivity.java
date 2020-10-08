@@ -147,14 +147,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .add(R.id.fragment_container, new MyLeadsFragment())
                 .commit();
 
-        // MAKE MENU-ITEM "nav_my_leads" AS CHECKED SINCE "DONATE FRAGMENT" IS THE DEFAULT FRAGMENT
+        // MAKE MENU-ITEM "icon_my_leads" AS CHECKED SINCE "DONATE FRAGMENT" IS THE DEFAULT FRAGMENT
         menu.findItem(R.id.nav_my_leads).setChecked(true);
 
     }
 
     @Override
     public void onClickLoadAddLeadFragment() {
-        // MAKE MENU-ITEM "nav_add_lead"
+        // MAKE MENU-ITEM "icon_add_lead"
         menu.findItem(R.id.nav_add_lead).setChecked(true);
 
         getSupportFragmentManager()

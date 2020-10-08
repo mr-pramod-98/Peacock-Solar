@@ -11,28 +11,28 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:theme="@style/ToolbarTheme"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/toolbar_background"
-        android:elevation="8dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="2dp"
+        android:background="@drawable/toolbar_background_style"
+        android:elevation="8dp"
+        android:padding="4dp"
+        android:theme="@style/ToolbarTheme"
         app:title="Edit Profile"
-        app:titleTextColor="@color/white"
-        android:padding="4dp" />
+        app:titleTextColor="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/edit_profile_background"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/background_style_white_grey"
+        android:orientation="vertical"
         android:padding="20dp">
 
 
@@ -41,19 +41,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_light"
+            android:padding="4dp"
             android:text="@string/profile_name"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:padding="4dp"/>
+            android:textSize="12sp" />
 
         <EditText
             android:id="@+id/name_edit_text_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/profile_username"
             android:drawableEnd="@drawable/authentication_username"
             android:fontFamily="@font/poppins_light"
             android:inputType="text"
+            android:text="@string/profile_username"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -62,19 +62,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_light"
+            android:padding="4dp"
             android:text="@string/profile_email"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:padding="4dp"/>
+            android:textSize="12sp" />
 
         <EditText
             android:id="@+id/email_edit_text_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/profile_email_value"
             android:drawableEnd="@drawable/authentication_email"
             android:fontFamily="@font/poppins_light"
             android:inputType="textEmailAddress"
+            android:text="@string/profile_email_value"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -83,19 +83,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_light"
+            android:padding="4dp"
             android:text="@string/profile_phone_number"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:padding="4dp"/>
+            android:textSize="12sp" />
 
         <EditText
             android:id="@+id/phone_edit_text_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/profile_phone_number_value"
             android:drawableEnd="@drawable/authentication_phone_number"
             android:fontFamily="@font/poppins_light"
             android:inputType="phone"
+            android:text="@string/profile_phone_number_value"
             android:textColor="@color/blue"
             android:textSize="18sp" />
 
@@ -104,30 +104,30 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_light"
+            android:padding="4dp"
             android:text="@string/profile_user_dob"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:padding="4dp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/date_of_birth_edit_text_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:drawableEndCompat="@drawable/profile_calendar"
-            android:text="@string/profile_user_dob_value"
             android:fontFamily="@font/poppins_light"
+            android:text="@string/profile_user_dob_value"
             android:textColor="@color/blue"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            app:drawableEndCompat="@drawable/icon_calendar" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_light"
+            android:padding="4dp"
             android:text="@string/profile_gender"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:padding="4dp"/>
+            android:textSize="12sp" />
 
         <Spinner
             android:id="@+id/gender_spinner_profile"
@@ -142,7 +142,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/profile_button_background"
+            android:background="@drawable/button_background_style_blue"
             android:text="@string/profile_save"
             android:textAllCaps="true"
             android:textColor="@android:color/white"

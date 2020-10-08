@@ -11,13 +11,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/edit_profile_background"
-        android:gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/background_style_white_grey"
+        android:gravity="center"
+        android:orientation="vertical"
         android:padding="20dp">
 
         <TextView
@@ -27,19 +27,19 @@
             android:layout_marginBottom="30dp"
             android:text="@string/add_lead_details"
             android:textColor="@color/black"
-            android:textSize="32sp"/>
+            android:textSize="32sp" />
 
         <EditText
             android:id="@+id/name_edit_text_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="@string/add_lead_name_hint"
-            android:textColorHint="@color/soft_grey"
             android:drawableEnd="@drawable/authentication_username"
             android:fontFamily="@font/poppins_light"
+            android:hint="@string/add_lead_name_hint"
             android:inputType="text"
             android:textColor="@color/blue"
+            android:textColorHint="@color/soft_grey"
             android:textSize="18sp" />
 
 
@@ -48,12 +48,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="@string/add_lead_phone_number_hint"
-            android:textColorHint="@color/soft_grey"
             android:drawableEnd="@drawable/authentication_phone_number"
             android:fontFamily="@font/poppins_light"
+            android:hint="@string/add_lead_phone_number_hint"
             android:inputType="phone"
             android:textColor="@color/blue"
+            android:textColorHint="@color/soft_grey"
             android:textSize="18sp" />
 
 
@@ -62,12 +62,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="@string/add_lead_email_hint"
-            android:textColorHint="@color/soft_grey"
             android:drawableEnd="@drawable/authentication_email"
             android:fontFamily="@font/poppins_light"
+            android:hint="@string/add_lead_email_hint"
             android:inputType="textEmailAddress"
             android:textColor="@color/blue"
+            android:textColorHint="@color/soft_grey"
             android:textSize="18sp" />
 
 
@@ -76,12 +76,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            app:drawableEndCompat="@drawable/icon_source"
-            android:textColorHint="@color/soft_grey"
-            android:hint="@string/add_lead_source_hint"
             android:fontFamily="@font/poppins_light"
+            android:hint="@string/add_lead_source_hint"
             android:textColor="@color/blue"
-            android:textSize="18sp"/>
+            android:textColorHint="@color/soft_grey"
+            android:textSize="18sp"
+            app:drawableEndCompat="@drawable/icon_source" />
 
 
         <EditText
@@ -89,12 +89,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            app:drawableEndCompat="@drawable/icon_address"
-            android:textColorHint="@color/soft_grey"
-            android:hint="@string/add_lead_address_hint"
             android:fontFamily="@font/poppins_light"
+            android:hint="@string/add_lead_address_hint"
             android:textColor="@color/blue"
-            android:textSize="18sp"/>
+            android:textColorHint="@color/soft_grey"
+            android:textSize="18sp"
+            app:drawableEndCompat="@drawable/icon_address" />
 
         <Button
             android:id="@+id/save_button"
@@ -103,7 +103,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/profile_button_background"
+            android:background="@drawable/button_background_style_blue"
             android:text="@string/add_lead_button"
             android:textAllCaps="true"
             android:textColor="@android:color/white"

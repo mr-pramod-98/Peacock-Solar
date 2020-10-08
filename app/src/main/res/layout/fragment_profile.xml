@@ -1,204 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Components.Profile.ProfileFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
 
         <RelativeLayout
+            android:id="@+id/profile_image_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:layout_height="200dp"
+            android:background="@drawable/background_style_white_grey"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="20dp">
 
             <RelativeLayout
-                android:id="@+id/profile_image_layout"
+                android:id="@+id/profile_image_wrapper"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@drawable/profile_background"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="40dp">
-
-                <RelativeLayout
-                    android:id="@+id/profile_image_wrapper"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="6dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="@string/profile_hello"
-                        android:textColor="@color/soft_grey"
-                        android:textSize="20sp" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/profile_image"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/profile_picture"
-                        app:civ_border_width="0.5dp"
-                        app:civ_border_color="@color/black"/>
-
-                </RelativeLayout>
+                android:layout_height="120dp">
 
                 <TextView
-                    android:id="@+id/username"
-                    android:layout_below="@id/profile_image_wrapper"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="6dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="@string/profile_username"
-                    android:textSize="24sp"
-                    android:textColor="@color/black"/>
+                    android:text="@string/profile_hello"
+                    android:textColor="@color/soft_grey"
+                    android:textSize="20sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/profile_picture"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="0.5dp" />
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/profile_edit_button_layout"
-                android:layout_below="@+id/profile_image_layout"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/profile_background"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/profile_edit_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="8dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="@string/edit_profile"
-                        android:fontFamily="@font/poppins_medium"
-                        android:textSize="15sp"
-                        android:textColor="@color/blue"/>
-
-                </androidx.cardview.widget.CardView>
-
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_below="@id/profile_edit_button_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/profile_background"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/edit_profile"
-                        android:textSize="12sp"
-                        android:textColor="@color/blue"
-                        android:fontFamily="@font/poppins_light" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_email_value"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_light" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_phone_number"
-                        android:textSize="12sp"
-                        android:textColor="@color/blue"
-                        android:fontFamily="@font/poppins_light" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_phone_number_value"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_light" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_gender"
-                        android:textSize="12sp"
-                        android:textColor="@color/blue"
-                        android:fontFamily="@font/poppins_light" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_gender_value"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_light" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_user_dob"
-                        android:textSize="12sp"
-                        android:textColor="@color/blue"
-                        android:fontFamily="@font/poppins_light" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_user_dob_value"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_light" />
-                </LinearLayout>
-
-            </LinearLayout>
+                android:layout_below="@id/profile_image_wrapper"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/profile_username"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/profile_edit_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_image_layout"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_style_white_grey">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_edit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/edit_profile"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_edit_button_layout"
+            android:background="@drawable/background_style_white_grey"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_email"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_email_value"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_phone_number"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_phone_number_value"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_gender"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_gender_value"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_user_dob"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/profile_user_dob_value"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </ScrollView>

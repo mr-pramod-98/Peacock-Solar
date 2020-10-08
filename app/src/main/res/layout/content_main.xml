@@ -7,33 +7,32 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:theme="@style/ToolbarTheme"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:padding="5dp"
+        android:background="@drawable/toolbar_background_style"
         android:elevation="5dp"
-        android:background="@drawable/toolbar_background">
+        android:padding="5dp"
+        android:theme="@style/ToolbarTheme">
 
         <TextView
             android:id="@+id/toolbar_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:gravity="center_vertical"
             android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
             android:text="@string/peacock_solar"
-            android:textSize="18sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
     </androidx.appcompat.widget.Toolbar>
-
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
