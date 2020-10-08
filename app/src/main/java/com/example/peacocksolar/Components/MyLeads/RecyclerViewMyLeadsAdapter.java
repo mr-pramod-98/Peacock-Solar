@@ -15,8 +15,7 @@ import com.example.peacocksolar.R;
 public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerViewMyLeadsAdapter.ViewHolder> {
 
 
-    public RecyclerViewMyLeadsAdapter() {
-    }
+    public RecyclerViewMyLeadsAdapter() { }
 
 
     @NonNull
@@ -28,7 +27,7 @@ public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        //TODO: HANDLE THE ACTION HERE
     }
 
     @Override
@@ -36,7 +35,7 @@ public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerVie
         return 5;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView lead_name;
         TextView lead_address;

@@ -17,6 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // ENABLE FULL-SCREEN
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -25,11 +26,13 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
+        // HANDLING THE DELAY
         new Handler().postDelayed(new Runnable() {
 
             @Override
             public void run() {
-                // This method will be executed once the timer is over
+
+                // LAUNCH THE "lOG-IN ACTIVITY" ONCE THE TIMER IS OVER
                 Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();

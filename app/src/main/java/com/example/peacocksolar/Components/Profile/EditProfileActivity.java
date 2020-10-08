@@ -34,6 +34,7 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
+        // INITIALIZING VARIABLES
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         nameEditText = findViewById(R.id.name_edit_text_profile);
         emailEditText = findViewById(R.id.email_edit_text_profile);
@@ -46,6 +47,8 @@ public class EditProfileActivity extends AppCompatActivity {
         emailEditText.setEnabled(false);
 
 
+        /* ====================== DATE PICKER DIALOG SETUP -> START ========================*/
+        // HANDLING ON-CLICK ON "DOB TEXT EDIT FIELD"
         dobEditText.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
@@ -67,6 +70,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+        /* ====================== DATE PICKER DIALOG SETUP -> END ========================*/
 
 
         /* ====================== SPINNER GENDER SETUP -> START ========================*/
@@ -87,12 +91,12 @@ public class EditProfileActivity extends AppCompatActivity {
         genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                //TODO: HANDLE ON SELECT HERE
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                // NOTHING HERE
             }
         });
 
@@ -101,6 +105,7 @@ public class EditProfileActivity extends AppCompatActivity {
         /* ======================= SPINNER GENDER SETUP -> END ========================*/
 
 
+        /* ========================= TOOLBAR SETUP -> START ===========================*/
         // PROFILE TOOLBAR
         setSupportActionBar(toolbar);
 
@@ -115,8 +120,11 @@ public class EditProfileActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        /* ========================= TOOLBAR SETUP -> END ===========================*/
     }
 
+
+    // THIS METHOD IS USED TO HANDLE THE "BACK PRESS ACTION"
     @Override
     public void onBackPressed() {
         super.onBackPressed();

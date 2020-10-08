@@ -13,12 +13,14 @@ import com.example.peacocksolar.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    // WIDGETS
     private LinearLayout signInLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // ENABLE FULL-SCREEN
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -26,11 +28,14 @@ public class RegisterActivity extends AppCompatActivity {
         );
         setContentView(R.layout.activity_register);
 
+        // INITIALIZING VARIABLES
         signInLink = findViewById(R.id.sign_in_link);
 
+        // HANDLING OC-CLICK ON "SIGN-IN LINK"
         signInLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // ON-CLICK LAUNCH "LOGIN ACTIVITY"
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
             }

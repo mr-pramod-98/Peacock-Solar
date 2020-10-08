@@ -75,11 +75,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // INITIALIZING VARIABLES
         navigationView = findViewById(R.id.navigation_view);
         navigationViewHeader = navigationView.getHeaderView(0);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -89,6 +91,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // GET THE MENU
         menu = navigationView.getMenu();
 
+
+        /* ========================= NAVIGATION DRAWER SETUP -> START ===========================*/
 
         /* ========================= TOOLBAR SETUP -> START ===========================*/
         // SET TOOLBAR
@@ -111,7 +115,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // SYNCING THE DRAWER
         actionBarDrawerToggleRequest.syncState();
-        /* ========================= TOOLBAR REQUEST SETUP -> END ===========================*/
+        /* ========================= TOOLBAR SETUP -> END ===========================*/
+
+        // HANDLING CLICK ON "SETTINGS"
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: HANDLE SIGN-OUT
+                Toast.makeText(MainActivity.this, "Signed Out", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // SETTING LISTENER FOR NAVIGATION VIEW
+        navigationView.setNavigationItemSelectedListener(this);
+        /* ========================= NAVIGATION DRAWER SETUP -> END ===========================*/
+
+
+        /* ========================= FRAGMENT SETUP -> START ===========================*/
+        // LOADING THE DEFAULT FRAGMENT (i.e, MY-LEADS FRAGMENT)
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment_container, new MyLeadsFragment())
+                .commit();
+
+        // MAKE MENU-ITEM "nav_my_leads" AS CHECKED SINCE "MY-LEADS FRAGMENT" IS THE DEFAULT FRAGMENT
+        menu.findItem(R.id.nav_my_leads).setChecked(true);
+        /* ========================= FRAGMENT SETUP -> END ===========================*/
 
 
         // HANDLING CLICK ON "NAVIGATION VIEW HEADER"
@@ -125,38 +154,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.fragment_container, new ProfileFragment())
                         .commit();
 
-                // CLOSE THE DRAWER
-                drawerLayout.closeDrawers();
+                // CLOSE DRAWER AFTER LOADING THE FRAGMENT
+                drawerLayout.closeDrawer(GravityCompat.START);
             }
         });
-
-        // HANDLING CLICK ON "SETTINGS"
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO: HANDLE SIGN-OUT
-                Toast.makeText(MainActivity.this, "Signed Out", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // SETTING LISTENER FOR NAVIGATION VIEW
-        navigationView.setNavigationItemSelectedListener(this);
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.fragment_container, new MyLeadsFragment())
-                .commit();
-
-        // MAKE MENU-ITEM "icon_my_leads" AS CHECKED SINCE "DONATE FRAGMENT" IS THE DEFAULT FRAGMENT
-        menu.findItem(R.id.nav_my_leads).setChecked(true);
-
     }
 
+
+    // THIS METHOD IS USED TO LOAD "ADD-LEADS FRAGMENT" WHEN CLICKED ON THE "+ BUTTON" IN "MY-LEADS FRAGMENT"
     @Override
     public void onClickLoadAddLeadFragment() {
-        // MAKE MENU-ITEM "icon_add_lead"
+        // MAKE MENU-ITEM "nav_add_lead"
         menu.findItem(R.id.nav_add_lead).setChecked(true);
 
+        // LOAD "ADD-LEAD FRAGMENT"
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, new AddLeadFragment())
