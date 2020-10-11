@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.peacocksolar.Components.AddLead.AddLeadFragment;
+import com.example.peacocksolar.Components.LearnMore.LearnMoreFragment;
 import com.example.peacocksolar.Components.MyLeads.MyLeadsFragment;
 import com.example.peacocksolar.Components.Profile.ProfileFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_learn_more:
+                fragment = new LearnMoreFragment();
                 break;
         }
 
