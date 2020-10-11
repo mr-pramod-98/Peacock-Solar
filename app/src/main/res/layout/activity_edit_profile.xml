@@ -19,10 +19,21 @@
         android:layout_marginBottom="2dp"
         android:background="@drawable/toolbar_background_style"
         android:elevation="8dp"
-        android:padding="4dp"
-        android:theme="@style/ToolbarTheme"
-        app:title="Edit Profile"
-        app:titleTextColor="@color/white" />
+        android:padding="5dp"
+        android:theme="@style/ToolbarTheme">
+
+        <TextView
+            android:id="@+id/toolbar_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:text="@string/edit_profile_toolbar"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
