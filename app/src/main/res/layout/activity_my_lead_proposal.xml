@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Components.MyLeads.MyLeadProposalActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/toolbar_background_style"
+        android:elevation="8dp"
+        android:padding="5dp"
+        android:theme="@style/ToolbarTheme">
+
+        <TextView
+            android:id="@+id/toolbar_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:text="@string/peacock_solar_toolbar"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/background_style_white_grey"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/energy_info"
+                android:textColor="@color/black"
+                android:textSize="32sp" />
+
+            <EditText
+                android:id="@+id/avg_electricity_bill_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/avg_electricity_bill_hint"
+                android:inputType="number"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/soft_grey"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/number_of_acs_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/number_of_acs_hint"
+                android:inputType="number"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/soft_grey"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/plot_size_of_house_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/plot_size_of_house_hint"
+                android:inputType="number"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/soft_grey"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/number_of_family_members_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/number_of_family_members_hint"
+                android:inputType="number"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/soft_grey"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/power_calculation_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/power_calculation_hint"
+                android:inputType="number"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/soft_grey"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_background_style_blue"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:elevation="5dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

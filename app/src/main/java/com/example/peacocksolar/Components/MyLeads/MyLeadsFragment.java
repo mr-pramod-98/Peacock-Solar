@@ -97,7 +97,8 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
 
     @Override
     public void onCreateProposalClick() {
-        Toast.makeText(getActivity(), "TODO: CREATE PROPOSAL", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), MyLeadProposalActivity.class);
+        startActivity(intent);
     }
 
     @Override

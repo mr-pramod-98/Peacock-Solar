@@ -11,8 +11,8 @@
     <string name="password_example">enter password</string>
 
     <!-- TOOLBAR -->
-    <string name="peacock_solar">Peacock Solar</string>
-    <string name="profile">Profile</string>
+    <string name="peacock_solar_toolbar">Peacock Solar</string>
+    <string name="edit_profile_toolbar">Edit Profile</string>
 
     <!-- NAVIGATION DRAWER -->
     <string name="my_incentive">$ 203.18</string>
@@ -68,6 +68,15 @@
     <string name="add_lead_source_hint">Source</string>
     <string name="add_lead_address_hint">Complete Address</string>
     <string name="add_lead_button">Add Lead</string>
+
+    <!-- CREATE PROPOSAL PAGE -->
+    <string name="energy_info">Energy Information</string>
+    <string name="avg_electricity_bill_hint">Avg. Electricity Bill</string>
+    <string name="number_of_acs_hint">Number of ACs</string>
+    <string name="plot_size_of_house_hint">Plot Size of House</string>
+    <string name="number_of_family_members_hint">Number of Family Members</string>
+    <string name="power_calculation_hint">Power Calculation</string>
+    <string name="submit">Submit</string>
 
     <!-- MY LEADS PAGE -->
     <string name="name"> Name : </string>
