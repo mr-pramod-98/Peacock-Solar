@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -31,6 +33,7 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
     // WIDGETS
     private FloatingActionButton addLeadButton;
     private RecyclerView recyclerView;
+    private ViewGroup viewGroup;
 
     // VAR
     private RecyclerViewMyLeadsAdapter adapter;
@@ -56,6 +59,7 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
         // INITIALIZING VARIABLES
         addLeadButton = view.findViewById(R.id.add_lead_button);
         recyclerView = view.findViewById(R.id.recycler_view_my_leads);
+        viewGroup = view.findViewById(android.R.id.content);
         adapter = new RecyclerViewMyLeadsAdapter();
 
         /* ========================= RECYCLER VIEW SETUP -> START ===========================*/
@@ -97,8 +101,41 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
 
     @Override
     public void onCreateProposalClick() {
-        Intent intent = new Intent(getActivity(), MyLeadProposalActivity.class);
-        startActivity(intent);
+
+        // CREATING A DIALOG TO ASK FOR USER CONFIRMATION
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        View alertLayout = LayoutInflater.from(getContext()).inflate(R.layout.alert_layout_style, viewGroup, false);
+
+        // SET THE VIEW
+        builder.setView(alertLayout);
+
+        // SHOW THE DIALOG
+        final AlertDialog dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
+
+        // TODO: TAKE ACTION WHEN "YES" IS CLICKED
+        alertLayout.findViewById(R.id.button_yes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "TODO:// ACTION PENDING", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        // LAUNCH THE ACTIVITY TO CALCULATE THE CAPACITY WHEN "NO" IS CLICKED
+        alertLayout.findViewById(R.id.button_no).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), MyLeadProposalActivity.class);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+
+
     }
 
     @Override
