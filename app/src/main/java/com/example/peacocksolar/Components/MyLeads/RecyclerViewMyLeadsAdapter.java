@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.peacocksolar.Components.MyLeads.Models.LeadsData;
 import com.example.peacocksolar.R;
 
 
@@ -27,8 +28,12 @@ public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerVie
         this.listener = listener;
     }
 
+    // VARIABLES
+    private LeadsData[] leadsData;
 
-    public RecyclerViewMyLeadsAdapter() { }
+    public RecyclerViewMyLeadsAdapter(LeadsData[] leadsData) {
+        this.leadsData = leadsData;
+    }
 
 
     @NonNull
@@ -39,13 +44,17 @@ public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerVie
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+
+        holder.lead_name.setText(leadsData[position].getCustomer_name());
+
+        holder.lead_address.setText(leadsData[position].getAddress());
 
         holder.call_lead_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(listener != null){
-                    listener.onContactClicked("9343280082");
+                    listener.onContactClicked(leadsData[position].getPhone_no());
                 }
             }
         });
@@ -54,7 +63,7 @@ public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerVie
             @Override
             public void onClick(View view) {
                 if(listener != null){
-                    listener.onMessageClick("9343280082");
+                    listener.onMessageClick(leadsData[position].getPhone_no());
                 }
             }
         });
@@ -70,9 +79,7 @@ public class RecyclerViewMyLeadsAdapter extends RecyclerView.Adapter<RecyclerVie
     }
 
     @Override
-    public int getItemCount() {
-        return 5;
-    }
+    public int getItemCount() { return leadsData.length; }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 

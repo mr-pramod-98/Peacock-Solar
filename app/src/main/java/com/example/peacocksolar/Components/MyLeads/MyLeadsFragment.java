@@ -19,16 +19,39 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.peacocksolar.Components.MyLeads.Models.LeadsData;
 import com.example.peacocksolar.Components.MyLeads.RecyclerViewMyLeadsAdapter;
 import com.example.peacocksolar.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdapter.Listener {
+
+    private static final String TAG = "MyLeadsFragment";
 
     // WIDGETS
     private FloatingActionButton addLeadButton;
@@ -37,6 +60,7 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
 
     // VAR
     private RecyclerViewMyLeadsAdapter adapter;
+    private LeadsData[] leadsData;
     private Listener listenerAddLead;
     private String phoneNumber;
 
@@ -49,6 +73,7 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        getMyLeadsData(this);
         return inflater.inflate(R.layout.fragment_my_leads, container, false);
     }
 
@@ -60,20 +85,8 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
         addLeadButton = view.findViewById(R.id.add_lead_button);
         recyclerView = view.findViewById(R.id.recycler_view_my_leads);
         viewGroup = view.findViewById(android.R.id.content);
-        adapter = new RecyclerViewMyLeadsAdapter();
 
-        /* ========================= RECYCLER VIEW SETUP -> START ===========================*/
-        // SET ADAPTER FOR THE RECYCLER-VIEW
-        recyclerView.setAdapter(adapter);
-
-        // SET LAYOUT-MANAGER FOR THE RECYCLER-VIEW
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        recyclerView.hasFixedSize();
-        /* ========================= RECYCLER VIEW SETUP -> END ===========================*/
-
-        // SETTING THE LISTENER FOR "MY LEAD ACTIONS"
-        adapter.setMyLeadActionsListener(this);
+        // SETTING FOR RECYCLE-VIEW AND IT'S ADAPTER IS DONE INSIDE "getMyLeadsData" METHOD
 
         // HANDLING ON-CLICK ON "ADD-LEAD BUTTON" (i.e, FLOATING ACTION BUTTON)
         addLeadButton.setOnClickListener(new View.OnClickListener() {
@@ -219,5 +232,81 @@ public class MyLeadsFragment extends Fragment implements RecyclerViewMyLeadsAdap
                 }
             }
         }
+    }
+
+    // THIS METHOD IS USED TO GET THE LEADS-DATA
+    private void getMyLeadsData(final MyLeadsFragment context) {
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+        String url ="http://3.6.93.71:8000/my_leads";
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        leadsData = new Gson().fromJson(response, LeadsData[].class);
+                        {
+                            adapter = new RecyclerViewMyLeadsAdapter(leadsData);
+
+                            /* ========================= RECYCLER VIEW SETUP -> START ===========================*/
+                            // SET ADAPTER FOR THE RECYCLER-VIEW
+                            recyclerView.setAdapter(adapter);
+
+                            // SET LAYOUT-MANAGER FOR THE RECYCLER-VIEW
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                            recyclerView.hasFixedSize();
+                            /* ========================= RECYCLER VIEW SETUP -> END ===========================*/
+
+                            // SETTING THE LISTENER FOR "MY LEAD ACTIONS"
+                            adapter.setMyLeadActionsListener(context);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "error:" + error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("agent_id", 1);
+                    String requestBody = jsonObject.toString();
+                    try {
+                        return requestBody == null? null: requestBody.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                        VolleyLog.wtf("Unsupported encoding");
+                        Toast.makeText(getContext(), "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        return null;
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("Content-Type", "application/json");
+                return params;
+            }
+        };
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
+
     }
 }
