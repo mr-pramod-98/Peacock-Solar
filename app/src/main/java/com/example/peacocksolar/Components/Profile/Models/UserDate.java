@@ -1,13 +1,13 @@
 package com.example.peacocksolar.Components.Profile.Models;
 
 public class UserDate {
-    private String name, phoneNumber, email, gender, dob;
+    private String name, phone_no, email, gender, dob;
     private int id;
 
-    public UserDate(int id, String name, String phoneNumber, String email, String gender, String dob) {
+    public UserDate(int id, String name, String email, String phone_no, String gender, String dob) {
         this.id = id;
         this.name = name;
-        this.phoneNumber = phoneNumber;
+        this.phone_no = phone_no;
         this.email = email;
         this.gender = gender;
         this.dob = dob;
@@ -19,7 +19,7 @@ public class UserDate {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return phone_no;
     }
 
     public String getEmail() {
@@ -43,8 +43,8 @@ public class UserDate {
         this.name = name;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String phone_no) {
+        this.phone_no = phone_no;
     }
 
     public void setEmail(String email) {

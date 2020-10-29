@@ -51,7 +51,7 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/username"
+                android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/profile_image_wrapper"
@@ -120,6 +120,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/user_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"
@@ -143,6 +144,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/user_phone_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"
@@ -166,6 +168,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/user_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"
@@ -189,6 +192,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/user_dob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_light"

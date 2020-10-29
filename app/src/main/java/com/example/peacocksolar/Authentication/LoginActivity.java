@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                         sharedUserData.setName(userDate[0].getName());
                         sharedUserData.setEmail(userDate[0].getEmail());
                         sharedUserData.setPhoneNumber(userDate[0].getPhoneNumber());
-                        sharedUserData.setGender(userDate[0].getGender());
+                        sharedUserData.setGender(userDate[0].getGender().equals("1")? "Male": "Female");
                         sharedUserData.setDateOfBirth(userDate[0].getDateOfBirth());
                         sharedUserData.setIsLoggedIn(true);
 

@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.peacocksolar.R;
+import com.example.peacocksolar.SharedPreferences.SharedUserData;
 
 import java.util.Calendar;
 
@@ -28,6 +29,9 @@ public class EditProfileActivity extends AppCompatActivity {
     private TextView dobEditText;
     private Spinner genderSpinner;
     private Button saveButton;
+
+    // VAR
+    private SharedUserData sharedUserData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +46,13 @@ public class EditProfileActivity extends AppCompatActivity {
         genderSpinner = findViewById(R.id.gender_spinner_profile);
         dobEditText = findViewById(R.id.date_of_birth_edit_text_profile);
         saveButton = findViewById(R.id.save_button);
+        sharedUserData = new SharedUserData(getApplicationContext());
 
         // DISABLE EMAIL FIELD SINCE "EMAIL SHOULD BE UNIQUE" AND CANNOT BE CHANGED
         emailEditText.setEnabled(false);
 
+        // SETTING USER-DATE
+        setUserData();
 
         /* ====================== DATE PICKER DIALOG SETUP -> START ========================*/
         // HANDLING ON-CLICK ON "DOB TEXT EDIT FIELD"
@@ -62,7 +69,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(EditProfileActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        String date = day + "/" + month + "/" + year;
+                        String date = year + "-" + month + "-" + day;
                         dobEditText.setText(date);
                     }
                 }, year, month, day);
@@ -100,8 +107,8 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
-        // SETTING THE DEFAULT VALUE TO THE USERS GENDER
-        genderSpinner.setSelection(arrayAdapterGender.getPosition("Male"));
+        // SETTING THE USERS GENDER
+        genderSpinner.setSelection(arrayAdapterGender.getPosition(sharedUserData.getGender()));
         /* ======================= SPINNER GENDER SETUP -> END ========================*/
 
 
@@ -128,5 +135,13 @@ public class EditProfileActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    // THIS METHOD IS USED TO SET USER-DATA
+    private void setUserData() {
+        nameEditText.setText(sharedUserData.getName());
+        emailEditText.setText(sharedUserData.getEmail());
+        phoneEditText.setText(sharedUserData.getPhoneNumber());
+        dobEditText.setText(sharedUserData.getDateOfBirth().substring(0, 10));
     }
 }
