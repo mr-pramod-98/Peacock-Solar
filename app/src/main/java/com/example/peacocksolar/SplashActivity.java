@@ -9,7 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.peacocksolar.Authentication.LoginActivity;
-import com.example.peacocksolar.Authentication.RegisterActivity;
+import com.example.peacocksolar.SharedPreferences.SharedUserData;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,19 +24,44 @@ public class SplashActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
         setContentView(R.layout.activity_splash);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-        // HANDLING THE DELAY
-        new Handler().postDelayed(new Runnable() {
+        SharedUserData sharedUserData = new SharedUserData(getApplicationContext());
 
-            @Override
-            public void run() {
+        // CHECKING IF THE USER IS LOGGED-IN OR NOT
+        if(sharedUserData.getIsLoggedIn()) {
+            // LAUNCH "MAIN ACTIVITY" WHEN USER IS LOGGED-IN
+            // HANDLING THE DELAY
+            new Handler().postDelayed(new Runnable() {
 
-                // LAUNCH THE "lOG-IN ACTIVITY" ONCE THE TIMER IS OVER
-                Intent i = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(i);
-                finish();
-            }
-        }, 1500);
+                @Override
+                public void run() {
+
+                    // LAUNCH THE "lOG-IN ACTIVITY" ONCE THE TIMER IS OVER
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            }, 1500);
+
+        } else {
+            // LAUNCH "LOGIN ACTIVITY" WHEN USER IS LOGGED-OUT
+            // HANDLING THE DELAY
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    // LAUNCH THE "lOG-IN ACTIVITY" ONCE THE TIMER IS OVER
+                    Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+            }, 1500);
+        }
     }
 }

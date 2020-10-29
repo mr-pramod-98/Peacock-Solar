@@ -8,17 +8,21 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.peacocksolar.Authentication.LoginActivity;
 import com.example.peacocksolar.Components.AddLead.AddLeadFragment;
 import com.example.peacocksolar.Components.LearnMore.LearnMoreFragment;
 import com.example.peacocksolar.Components.MyLeads.MyLeadsFragment;
 import com.example.peacocksolar.Components.Profile.ProfileFragment;
+import com.example.peacocksolar.SharedPreferences.SharedUserData;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, MyLeadsFragment.Listener {
@@ -29,9 +33,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private LinearLayout signOut;
+    private TextView userName;
 
     // VAR
     private ActionBarDrawerToggle actionBarDrawerToggleRequest;
+    private SharedUserData sharedUserData;
+
     private static Menu menu;
 
     @Override
@@ -86,10 +93,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // INITIALIZING VARIABLES
         navigationView = findViewById(R.id.navigation_view);
         navigationViewHeader = navigationView.getHeaderView(0);
+        userName = navigationViewHeader.findViewById(R.id.name_text_view_drawer_header);
         drawerLayout = findViewById(R.id.drawer_layout);
         signOut = findViewById(R.id.nav_sign_out);
         toolbar = findViewById(R.id.toolbar);
-
+        sharedUserData = new SharedUserData(getApplicationContext());
         // GET THE MENU
         menu = navigationView.getMenu();
 
@@ -124,7 +132,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 //TODO: HANDLE SIGN-OUT
-                Toast.makeText(MainActivity.this, "Signed Out", Toast.LENGTH_SHORT).show();
+                sharedUserData.clearData();
+
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -174,5 +185,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .beginTransaction()
                 .replace(R.id.fragment_container, new AddLeadFragment())
                 .commit();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        sharedUserData = new SharedUserData(getApplicationContext());
+        userName.setText(sharedUserData.getName());
     }
 }
