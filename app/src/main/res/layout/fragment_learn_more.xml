@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="14.0sp"
         android:padding="5dp"/>
 
 </FrameLayout>

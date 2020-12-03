@@ -1,5 +1,6 @@
 package com.example.peacocksolar.Components.LearnMore;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.peacocksolar.R;
@@ -22,7 +25,7 @@ public class LearnMoreFragment extends Fragment {
     private ListView listView;
 
     // VARIABLES
-    private ArrayAdapter<String> listItemsAdapter;
+    private ListViewAdapter listViewAdapter;
 
     // CONSTANTS
     private static final String[] listItems = {"Why Solar", "Parts of Solar", "Benefits of Solar", "About Peacock Solar"};
@@ -40,18 +43,55 @@ public class LearnMoreFragment extends Fragment {
 
         // INITIALIZING VARIABLES
         listView = view.findViewById(R.id.list_view);
-        listItemsAdapter = new ArrayAdapter<String>(
-                getContext(),
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
-                listItems);
+        listViewAdapter = new ListViewAdapter(listItems);
 
-        listView.setAdapter(listItemsAdapter);
+        // SET ADAPTER FOR CUSTOM LIST-VIEW
+        listView.setAdapter(listViewAdapter);
+
+        // HANDLING ON-CLICK ON "LIST-VIEW ITEMS"
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Toast.makeText(getContext(), adapterView.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+
+    // CUSTOM LIST-VIEW ADAPTER CLASS
+    class ListViewAdapter extends BaseAdapter {
+        private String[] listItems;
+
+        public ListViewAdapter(String[] listItems) {
+            this.listItems = listItems;
+        }
+
+        @Override
+        public int getCount() {
+            return listItems.length;
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return listItems[i];
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return (long) i;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            // INFLATE THE CUSTOM LIST-VIEW LAYOUT
+            convertView = getLayoutInflater().inflate(R.layout.listview_layout_style, parent, false);
+
+            // SET TEXT
+            TextView listItemText = convertView.findViewById(R.id.list_item_text);
+            listItemText.setText(listItems[position]);
+
+            return convertView;
+        }
     }
 }
