@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Components.MyLeads.MyLeadProposalActivity"></activity>
         <activity android:name=".Components.Profile.EditProfileActivity" />
